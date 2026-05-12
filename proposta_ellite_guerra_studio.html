@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial — Ellite CPC × Guerra Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --laranja: #FF4D00;
+    --dark:    #0A0A0A;
+    --dark2:   #111111;
+    --dark3:   #1A1A1A;
+    --dark4:   #222222;
+    --cinza:   #888888;
+    --texto:   #AFAFAF;
+    --branco:  #F5F5F5;
+    --verde:   #00C896;
+    --azul:    #2563EB;
+    --amarelo: #FFB800;
+    --max:     1260px;
+    --px:      clamp(20px, 5vw, 80px);
+    --py:      clamp(48px, 8vw, 80px);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--branco);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    overflow-x: hidden;
+  }
+
+  /* ─── WRAPPER CENTRALIZADO 1260px ─── */
+  .wrap {
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--px);
+  }
+
+  /* ─── SEÇÃO BASE ─── */
+  .secao {
+    padding: var(--py) 0;
+    border-bottom: 1px solid #1a1a1a;
+    position: relative;
+  }
+
+  .secao-label { font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--laranja); margin-bottom: 12px; display: block; }
+  .secao-label.azul  { color: var(--azul); }
+  .secao-label.verde { color: var(--verde); }
+
+  .secao-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 5vw, 52px);
+    letter-spacing: 2px;
+    margin-bottom: clamp(28px, 5vw, 48px);
+    line-height: 1;
+  }
+
+  .secao-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 12vw, 120px);
+    color: rgba(255,255,255,0.025);
+    position: absolute;
+    top: clamp(20px, 4vw, 40px);
+    right: var(--px);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  /* ══════════════ CAPA ══════════════ */
+  .capa {
+    min-height: 100svh;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .capa::before {
+    content: '';
+    position: absolute;
+    top: -150px; right: -150px;
+    width: min(700px, 90vw); height: min(700px, 90vw);
+    background: radial-gradient(circle, rgba(255,77,0,0.13) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .capa::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--laranja), transparent);
+  }
+  .capa-inner {
+    position: relative;
+    z-index: 1;
+    max-width: var(--max);
+    margin: 0 auto;
+    width: 100%;
+    padding: clamp(80px, 14vw, 130px) var(--px) clamp(60px, 8vw, 100px);
+  }
+  .capa-logo {
+    position: absolute;
+    top: clamp(24px, 4vw, 48px);
+    right: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(13px, 2vw, 20px);
+    letter-spacing: 4px;
+    color: var(--cinza);
+  }
+  .capa-logo span { color: var(--laranja); }
+
+  .badge-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,77,0,0.1);
+    border: 1px solid rgba(255,77,0,0.3);
+    padding: 6px 14px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--laranja);
+    margin-bottom: clamp(24px, 5vw, 48px);
+  }
+  .capa-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 14vw, 130px);
+    line-height: 0.88;
+    letter-spacing: 2px;
+    margin-bottom: clamp(14px, 3vw, 24px);
+  }
+  .capa-titulo span { color: var(--laranja); }
+  .capa-sub {
+    font-size: clamp(14px, 2vw, 17px);
+    font-weight: 400;
+    color: #C8C8C8;
+    margin-bottom: clamp(36px, 7vw, 72px);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+  .capa-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: clamp(20px, 3vw, 36px) clamp(16px, 4vw, 48px);
+    text-align: left;
+  }
+  .capa-info-item label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cinza);
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  .capa-info-item span {
+    font-size: clamp(12px, 1.5vw, 15px);
+    font-weight: 600;
+    color: var(--branco);
+    text-align: left;
+    display: block;
+  }
+
+  /* ══════════════ PROBLEMA ══════════════ */
+  .problema-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: clamp(10px, 2vw, 20px);
+  }
+  .problema-card {
+    background: var(--dark3);
+    border: 1px solid #222;
+    padding: clamp(20px, 3vw, 32px);
+    position: relative;
+  }
+  .problema-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--laranja);
+    opacity: 0.6;
+  }
+  .problema-card h3 {
+    font-size: clamp(11px, 1.4vw, 13px);
+    font-weight: 700;
+    color: var(--branco);
+    margin-bottom: 10px;
+  }
+  .problema-card p {
+    font-size: clamp(12px, 1.4vw, 13px);
+    font-weight: 400;
+    color: var(--texto);
+    line-height: 1.7;
+  }
+
+  /* ══════════════ SOLUÇÃO ══════════════ */
+  .modulos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: clamp(10px, 2vw, 16px);
+    margin-bottom: clamp(32px, 5vw, 48px);
+  }
+  .modulo-card {
+    background: var(--dark3);
+    border: 1px solid #222;
+    padding: clamp(20px, 3vw, 28px) clamp(16px, 2vw, 24px);
+    transition: border-color 0.25s;
+  }
+  .modulo-card:hover { border-color: var(--laranja); }
+  .modulo-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: var(--laranja);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .modulo-titulo {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--branco);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .modulo-desc {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--texto);
+    line-height: 1.7;
+  }
+
+  .docs-label { margin-bottom: 16px; }
+  .docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 10px;
+  }
+  .doc-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: clamp(12px, 2vw, 16px) clamp(14px, 2vw, 20px);
+    background: var(--dark3);
+    border: 1px solid #1e1e1e;
+  }
+  .doc-icon {
+    width: 30px; height: 30px;
+    background: rgba(255,77,0,0.1);
+    border: 1px solid rgba(255,77,0,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .doc-nome {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--branco);
+    line-height: 1.4;
+  }
+
+  /* ══════════════ INVESTIMENTO ══════════════ */
+  .investimento-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 4vw, 32px);
+  }
+  @media (max-width: 680px) {
+    .investimento-wrapper { grid-template-columns: 1fr; }
+  }
+  .preco-box {
+    background: var(--dark3);
+    border: 1px solid #333;
+    padding: clamp(24px, 4vw, 48px);
+    position: relative;
+    overflow: hidden;
+  }
+  .preco-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--azul);
+  }
+  .preco-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--branco);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .preco-valor {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 10vw, 76px);
+    color: var(--branco);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .preco-valor sup {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(16px, 3vw, 24px);
+    font-weight: 700;
+    vertical-align: super;
+    color: var(--azul);
+  }
+  .preco-desc {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--texto);
+    line-height: 1.7;
+  }
+  .precos-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(12px, 2vw, 24px);
+  }
+  @media (max-width: 560px) {
+    .precos-row { grid-template-columns: 1fr; }
+  }
+  .parceria-steps { display: flex; flex-direction: column; gap: 12px; }
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(12px, 2vw, 24px);
+    padding: clamp(16px, 2vw, 24px);
+    background: var(--dark3);
+    border: 1px solid #222;
+    flex-wrap: wrap;
+  }
+  .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 44px;
+    color: var(--verde);
+    line-height: 1;
+    min-width: 30px;
+    flex-shrink: 0;
+  }
+  .step-content { flex: 1; min-width: 140px; }
+  .step-content h3 {
+    font-size: clamp(12px, 1.6vw, 14px);
+    font-weight: 700;
+    color: var(--branco);
+    margin-bottom: 5px;
+  }
+  .step-content p {
+    font-size: 13px;
+    color: var(--texto);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  .step-badge {
+    background: rgba(0,200,150,0.08);
+    border: 1px solid rgba(0,200,150,0.3);
+    padding: 6px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--verde);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    align-self: center;
+    flex-shrink: 0;
+  }
+
+  /* ══════════════ ROI ══════════════ */
+  .roi-intro {
+    font-size: clamp(13px, 1.8vw, 15px);
+    font-weight: 400;
+    color: var(--texto);
+    margin-bottom: clamp(24px, 4vw, 40px);
+    max-width: 620px;
+    line-height: 1.7;
+  }
+  .table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: clamp(28px, 5vw, 48px);
+    border: 1px solid #222;
+    border-radius: 0;
+  }
+  .roi-table {
+    width: 100%;
+    min-width: 660px;
+    border-collapse: collapse;
+  }
+  .roi-table th {
+    background: rgba(0,200,150,0.08);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--verde);
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,200,150,0.2);
+    white-space: nowrap;
+  }
+  .roi-table td {
+    padding: 13px 16px;
+    font-size: 12px;
+    color: var(--branco);
+    border-bottom: 1px solid #1a1a1a;
+    white-space: nowrap;
+  }
+  .roi-table tr:last-child td { border-bottom: none; }
+  .roi-table tr:hover td { background: rgba(255,77,0,0.03); }
+  .roi-table tr.destaque td {
+    background: rgba(0,200,150,0.08);
+    border-bottom: 1px solid rgba(0,200,150,0.25);
+    border-top: 1px solid rgba(0,200,150,0.25);
+    font-weight: 600;
+  }
+  .verde   { color: var(--verde);   font-weight: 700; }
+  .laranja { color: var(--laranja); font-weight: 700; }
+  .amarelo { color: var(--amarelo); font-weight: 700; }
+
+  .roi-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(10px, 2vw, 16px);
+  }
+  @media (max-width: 600px) {
+    .roi-cards { grid-template-columns: 1fr; }
+  }
+  .roi-card {
+    background: var(--dark3);
+    border: 1px solid #222;
+    padding: clamp(20px, 3vw, 28px) clamp(16px, 2vw, 24px);
+    text-align: center;
+  }
+  .roi-card.top {
+    border-color: var(--verde);
+    background: rgba(0,200,150,0.05);
+  }
+  .roi-card .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 7vw, 56px);
+    color: var(--verde);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .roi-card .label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--branco);
+    margin-bottom: 8px;
+  }
+  .roi-card .desc {
+    font-size: 13px;
+    color: var(--texto);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  /* ══════════════ MERCADO ══════════════ */
+  .mercado-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(10px, 2vw, 16px);
+    margin-bottom: clamp(20px, 4vw, 40px);
+  }
+  @media (max-width: 600px) {
+    .mercado-stats { grid-template-columns: 1fr; }
+  }
+  .mercado-stat {
+    background: var(--dark3);
+    border: 1px solid #222;
+    padding: clamp(20px, 3vw, 32px) clamp(16px, 2vw, 24px);
+  }
+  .mercado-stat .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 7vw, 60px);
+    color: var(--branco);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .mercado-stat .num small {
+    font-size: 0.45em;
+    color: var(--verde);
+    vertical-align: super;
+  }
+  .mercado-stat .label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--branco);
+    margin-bottom: 8px;
+  }
+  .mercado-stat .sub {
+    font-size: 13px;
+    color: var(--texto);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .oportunidade-box {
+    background: rgba(0,200,150,0.06);
+    border: 1px solid rgba(0,200,150,0.25);
+    padding: clamp(24px, 4vw, 40px);
+    display: flex;
+    gap: clamp(20px, 4vw, 48px);
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .oportunidade-box .big-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 14vw, 140px);
+    color: var(--verde);
+    line-height: 0.9;
+    flex-shrink: 0;
+    letter-spacing: -2px;
+  }
+  .oportunidade-box .texto h3 {
+    font-size: clamp(14px, 2.5vw, 20px);
+    font-weight: 700;
+    color: var(--branco);
+    margin-bottom: 12px;
+  }
+  .oportunidade-box .texto p {
+    font-size: clamp(13px, 1.6vw, 15px);
+    color: var(--texto);
+    font-weight: 400;
+    line-height: 1.7;
+  }
+  .oportunidade-box .texto p strong { color: var(--branco); }
+
+  /* ══════════════ CRONOGRAMA ══════════════ */
+  .cronograma-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    position: relative;
+    gap: 0;
+  }
+
+  @media (min-width: 640px) {
+    .cronograma-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 8px; right: 8px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--laranja), rgba(255,77,0,0.1));
+    }
+    .fase {
+      padding: 56px clamp(12px, 2vw, 24px) 24px 0;
+      position: relative;
+    }
+    .fase-dot {
+      position: absolute;
+      top: 12px; left: 0;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--laranja);
+      border: 3px solid var(--dark);
+      box-shadow: 0 0 0 1px var(--laranja);
+    }
+  }
+
+  @media (max-width: 639px) {
+    .cronograma-wrapper { gap: 20px; }
+    .fase {
+      border-left: 3px solid var(--laranja);
+      padding-left: 20px;
+    }
+    .fase-dot { display: none; }
+  }
+
+  .fase-semana {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--laranja);
+    margin-bottom: 8px;
+  }
+  .fase-titulo {
+    font-size: clamp(13px, 1.8vw, 15px);
+    font-weight: 700;
+    color: var(--branco);
+    margin-bottom: 8px;
+  }
+  .fase-items {
+    font-size: 12px;
+    color: var(--cinza);
+    font-weight: 300;
+    line-height: 1.9;
+  }
+
+
+
+
+  /* ══════════════ SLIDER PROBLEMA ══════════════ */
+  .secao-slider { overflow: hidden; }
+
+  .sl-toprow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: clamp(28px, 4vw, 40px);
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .sl-toprow .secao-titulo { margin-bottom: 0; }
+
+  .sl-counter {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 6vw, 56px);
+    line-height: 1;
+    color: rgba(255,255,255,0.15);
+    flex-shrink: 0;
+  }
+  .sl-counter em {
+    color: var(--laranja);
+    font-style: normal;
+  }
+
+  .sl-viewport {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  .sl-track {
+    display: flex;
+    transition: transform 0.55s cubic-bezier(0.77, 0, 0.175, 1);
+    will-change: transform;
+  }
+
+  .sl-card {
+    min-width: 100%;
+    padding: clamp(32px, 5vw, 56px) clamp(28px, 4vw, 56px);
+    background: var(--dark3);
+    border: 1px solid #252525;
+    border-left: 4px solid var(--laranja);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: clamp(220px, 30vw, 280px);
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sl-card::after {
+    content: attr(data-num);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(100px, 18vw, 200px);
+    color: rgba(255,255,255,0.025);
+    position: absolute;
+    right: clamp(16px, 4vw, 48px);
+    bottom: -20px;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .sl-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--laranja);
+  }
+
+  .sl-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(24px, 4vw, 40px);
+    letter-spacing: 1px;
+    color: var(--branco);
+    line-height: 1.05;
+  }
+
+  .sl-card-text {
+    font-size: clamp(13px, 1.8vw, 15px);
+    color: var(--texto);
+    font-weight: 400;
+    line-height: 1.7;
+    max-width: 600px;
+  }
+
+  .sl-footer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .sl-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .sl-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: #333;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s;
+    flex-shrink: 0;
+  }
+  .sl-dot.active {
+    background: var(--laranja);
+    width: 24px;
+    border-radius: 4px;
+  }
+
+  .sl-progress-wrap {
+    flex: 1;
+    height: 2px;
+    background: #222;
+    min-width: 60px;
+    max-width: 200px;
+  }
+  .sl-progress-bar {
+    height: 100%;
+    background: var(--laranja);
+    width: 0%;
+    transition: width linear;
+  }
+
+  .sl-arrows {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+  }
+  .sl-btn {
+    width: 40px; height: 40px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: var(--branco);
+    cursor: pointer;
+    font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .sl-btn:hover {
+    background: var(--laranja);
+    border-color: var(--laranja);
+  }
+
+  /* ══════════════ MODULOS INTERATIVOS ══════════════ */
+  .modui {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: clamp(16px, 3vw, 32px);
+    margin-bottom: clamp(40px, 6vw, 56px);
+    align-items: stretch;
+  }
+  @media (max-width: 700px) {
+    .modui { grid-template-columns: 1fr; }
+  }
+
+  .modui-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  @media (max-width: 700px) {
+    .modui-tabs { flex-direction: row; flex-wrap: wrap; }
+  }
+
+  .modtab {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: clamp(14px, 2vw, 20px) clamp(14px, 2vw, 20px);
+    background: var(--dark3);
+    border: 1px solid #222;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.25s;
+    color: var(--cinza);
+    width: 100%;
+  }
+  @media (max-width: 700px) {
+    .modtab { width: auto; flex: 1; min-width: 120px; }
+  }
+  .modtab:hover { border-left-color: rgba(255,77,0,0.4); color: var(--branco); }
+  .modtab.active {
+    border-left-color: var(--laranja);
+    background: rgba(255,77,0,0.06);
+    color: var(--branco);
+  }
+  .modtab-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--laranja);
+    line-height: 1;
+    flex-shrink: 0;
+    opacity: 0.5;
+    transition: opacity 0.25s;
+  }
+  .modtab.active .modtab-num { opacity: 1; }
+  .modtab-name {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+  @media (max-width: 700px) {
+    .modtab-name { display: none; }
+  }
+
+  .modui-panel {
+    position: relative;
+    min-height: 280px;
+    background: var(--dark3);
+    border: 1px solid #252525;
+    overflow: hidden;
+  }
+
+  .modpanel {
+    position: absolute;
+    inset: 0;
+    padding: clamp(28px, 4vw, 48px);
+    opacity: 0;
+    transform: translateX(24px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  .modpanel.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+  .modpanel.exit {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+
+  .modpanel-bignum {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 10vw, 96px);
+    color: rgba(255,77,0,0.12);
+    line-height: 1;
+    position: absolute;
+    top: 16px; right: 24px;
+    user-select: none;
+  }
+  .modpanel-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(24px, 4vw, 38px);
+    color: var(--branco);
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+  .modpanel-text {
+    font-size: clamp(13px, 1.8vw, 15px);
+    color: var(--texto);
+    font-weight: 400;
+    line-height: 1.75;
+    max-width: 560px;
+  }
+  .modpanel-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,77,0,0.08);
+    border: 1px solid rgba(255,77,0,0.2);
+    padding: 6px 14px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--laranja);
+    width: fit-content;
+  }
+
+  /* ══════════════ DOCS CHIPS ANIMADOS ══════════════ */
+  .docs-chips-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .doc-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--dark3);
+    border: 1px solid #252525;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--branco);
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.25s;
+  }
+  .doc-chip.visible { opacity: 1; transform: translateY(0); }
+  .doc-chip:hover { border-color: rgba(255,77,0,0.3); }
+  .doc-chip-icon {
+    color: var(--laranja);
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+
+  @media print {
+    .secao { page-break-inside: avoid; }
+    .capa  { page-break-after: always; }
+    .table-scroll { overflow: visible; }
+    .roi-table { min-width: unset; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ CAPA ══════════════════ -->
+<section class="capa">
+  <div class="capa-inner">
+<div class="badge-top">PROPOSTA EXCLUSIVA</div>
+    <h1 class="capa-titulo">SISTEMA<br><span>BÉLICO</span><br>ELLITE</h1>
+    <p class="capa-sub">Plataforma de gestão de clientes, processos e documentos construída para a realidade da Ellite CPC.</p>
+    <div class="capa-info">
+      <div class="capa-info-item">
+        <label>Empresa</label>
+        <span>Ellite Caça, Pesca e Camping</span>
+      </div>
+      <div class="capa-info-item">
+        <label>Data</label>
+        <span>Maio de 2025</span>
+      </div>
+      <div class="capa-info-item">
+        <label>Elaborado por</label>
+        <span>Guerra Studio</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 01 — PROBLEMA ══════════════════ -->
+<section class="secao">
+  <div class="wrap">
+    <div class="sl-toprow">
+      <div>
+        <span class="secao-label">O Cenário Atual</span>
+        <h2 class="secao-titulo">O QUE ESTÁ TRAVANDO<br>A OPERAÇÃO</h2>
+      </div>
+      <div class="sl-counter"><em id="pCurrent">01</em> / 04</div>
+    </div>
+    <div class="sl-viewport">
+      <div class="sl-track" id="pTrack">
+        <div class="sl-card" data-num="01">
+          <span class="sl-card-label">Problema 01</span>
+          <h3 class="sl-card-title">TUDO MANUAL,<br>NADA AUTOMÁTICO</h3>
+          <p class="sl-card-text">Cada documento preenchido à mão no Word. Cada dado do cliente digitado individualmente em cada formulário. Cada processo acompanhado por memória ou planilha.</p>
+        </div>
+        <div class="sl-card" data-num="02">
+          <span class="sl-card-label">Problema 02</span>
+          <h3 class="sl-card-title">CLIENTE LIGA<br>PRA SABER O STATUS</h3>
+          <p class="sl-card-text">Sem notificação automática, o cliente não sabe o que aconteceu com o processo. Liga na loja. Isso toma tempo de quem precisa atender e vender.</p>
+        </div>
+        <div class="sl-card" data-num="03">
+          <span class="sl-card-label">Problema 03</span>
+          <h3 class="sl-card-title">VENCIMENTOS<br>PASSAM DESPERCEBIDOS</h3>
+          <p class="sl-card-text">CR, CRAF e outros documentos têm prazo de validade. Sem um sistema que avise com antecedência, o vencimento passa e o cliente fica irregular e insatisfeito.</p>
+        </div>
+        <div class="sl-card" data-num="04">
+          <span class="sl-card-label">Problema 04</span>
+          <h3 class="sl-card-title">PLATAFORMA PRONTA<br>NÃO SE ENCAIXA</h3>
+          <p class="sl-card-text">O DBI custa R$400/mês e foi feito para despachantes independentes. A Ellite é uma loja com serviço de despachante que precisa de algo feito para sua realidade.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sl-footer">
+      <div class="sl-dots" id="pDots">
+        <button class="sl-dot active" onclick="slGo('p',0)"></button>
+        <button class="sl-dot" onclick="slGo('p',1)"></button>
+        <button class="sl-dot" onclick="slGo('p',2)"></button>
+        <button class="sl-dot" onclick="slGo('p',3)"></button>
+      </div>
+      <div class="sl-progress-wrap"><div class="sl-progress-bar" id="pBar"></div></div>
+      <div class="sl-arrows">
+        <button class="sl-btn" onclick="slMove('p',-1)">←</button>
+        <button class="sl-btn" onclick="slMove('p',1)">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 02 — SOLUÇÃO ══════════════════ -->
+<section class="secao">
+  <div class="wrap">
+    <div class="secao-num">02</div>
+    <span class="secao-label">A Solução</span>
+    <h2 class="secao-titulo">4 MÓDULOS QUE RESOLVEM TUDO</h2>
+
+    <div class="modui">
+      <!-- Tabs -->
+      <div class="modui-tabs">
+        <button class="modtab active" onclick="selMod(0)">
+          <span class="modtab-num">01</span>
+          <span class="modtab-name">Cadastro Digital</span>
+        </button>
+        <button class="modtab" onclick="selMod(1)">
+          <span class="modtab-num">02</span>
+          <span class="modtab-name">Gestão de Armas</span>
+        </button>
+        <button class="modtab" onclick="selMod(2)">
+          <span class="modtab-num">03</span>
+          <span class="modtab-name">Processos e PDFs</span>
+        </button>
+        <button class="modtab" onclick="selMod(3)">
+          <span class="modtab-num">04</span>
+          <span class="modtab-name">Alertas no WhatsApp</span>
+        </button>
+      </div>
+      <!-- Panels -->
+      <div class="modui-panel">
+        <div class="modpanel active" id="mod0">
+          <div class="modpanel-bignum">01</div>
+          <span class="modpanel-tag">Módulo 01</span>
+          <div class="modpanel-title">CADASTRO DIGITAL</div>
+          <p class="modpanel-text">Link enviado pelo WhatsApp para o cliente preencher os próprios dados + upload de documentos (CNH, comprovante, contracheque). Dados chegam prontos, sem ninguém digitar nada.</p>
+        </div>
+        <div class="modpanel" id="mod1">
+          <div class="modpanel-bignum">02</div>
+          <span class="modpanel-tag">Módulo 02</span>
+          <div class="modpanel-title">GESTÃO DE ARMAS</div>
+          <p class="modpanel-text">A Ellite cadastra cada arma no momento da venda. Marca, modelo, calibre, série, SINARM/SIGMA. Vinculada ao comprador. Histórico completo da arma e do cliente.</p>
+        </div>
+        <div class="modpanel" id="mod2">
+          <div class="modpanel-bignum">03</div>
+          <span class="modpanel-tag">Módulo 03</span>
+          <div class="modpanel-title">PROCESSOS E PDFs</div>
+          <p class="modpanel-text">Seleciona o processo (transferência, registro, renovação de CR). O sistema preenche todos os documentos automaticamente com os dados do cliente. PDF pronto com 1 clique.</p>
+        </div>
+        <div class="modpanel" id="mod3">
+          <div class="modpanel-bignum">04</div>
+          <span class="modpanel-tag">Módulo 04</span>
+          <div class="modpanel-title">ALERTAS NO WHATSAPP</div>
+          <p class="modpanel-text">Avisos automáticos de vencimento de CR e CRAF enviados pelo WhatsApp da Ellite: 90, 60 e 30 dias antes. Cliente lembra da loja. Loja fideliza sem fazer nada.</p>
+        </div>
+      </div>
+    </div>
+
+    <span class="secao-label docs-label">Documentos Gerados Automaticamente</span>
+    <div class="docs-chips-wrap" id="docsChips">
+      <span class="doc-chip"><span class="doc-chip-icon">▸</span>Procuração</span>
+      <span class="doc-chip"><span class="doc-chip-icon">▸</span>Autodeclaração de Residência</span>
+      <span class="doc-chip"><span class="doc-chip-icon">▸</span>Declaração de Endereço de Guarda do Acervo</span>
+      <span class="doc-chip"><span class="doc-chip-icon">▸</span>Declaração de Inexistência de Inquéritos</span>
+      <span class="doc-chip"><span class="doc-chip-icon">▸</span>Declaração de Segurança do Acervo (DSA)</span>
+      <span class="doc-chip"><span class="doc-chip-icon">▸</span>Declaração de Compromisso de Treinamentos</span>
+      <span class="doc-chip"><span class="doc-chip-icon">▸</span>Transferência SINARM-CAC — Mesma Pessoa</span>
+      <span class="doc-chip"><span class="doc-chip-icon">▸</span>Transferência SINARM-CAC — CACs Distintos</span>
+      <span class="doc-chip"><span class="doc-chip-icon">▸</span>Transferência SINARM → SIGMA (Anexo L)</span>
+      <span class="doc-chip"><span class="doc-chip-icon">▸</span>Transferência SIGMA → SIGMA (Anexo M)</span>
+      <span class="doc-chip"><span class="doc-chip-icon">▸</span>Aquisição Calibre Restrito (Anexo A)</span>
+      <span class="doc-chip"><span class="doc-chip-icon">▸</span>Ficha de Protocolo e Despacho</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 03 — INVESTIMENTO ══════════════════ -->
+<section class="secao">
+  <div class="wrap">
+    <div class="secao-num">03</div>
+    <span class="secao-label azul">Investimento</span>
+    <h2 class="secao-titulo">VALORES E CONDIÇÕES</h2>
+    <div class="investimento-wrapper">
+      <!-- Linha 1: dois boxes lado a lado -->
+      <div class="precos-row">
+        <div class="preco-box">
+          <span class="preco-label">Implementação (único)</span>
+          <div class="preco-valor"><sup>R$</sup>7.897</div>
+          <p class="preco-desc">Inclui desenvolvimento completo com todos os módulos, configuração do WhatsApp API, setup de todos os documentos e treinamento da equipe da Ellite.</p>
+        </div>
+        <div class="preco-box">
+          <span class="preco-label">Mensalidade de manutenção e suporte</span>
+          <div class="preco-valor"><sup>R$</sup>400</div>
+          <p class="preco-desc">Suporte contínuo, atualizações do sistema, manutenção dos documentos conforme mudanças na legislação e atendimento prioritário.</p>
+        </div>
+      </div>
+      <!-- Linha 2: parceria em largura total -->
+      <div>
+        <span class="secao-label verde" style="margin-bottom:14px">Modelo de Parceria — Isenção da Mensalidade</span>
+        <div class="parceria-steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h3>Você indica 2 clientes para o sistema</h3>
+              <p>Outras lojas de armas, despachantes independentes ou clubes de tiro que se cadastrem e paguem a mensalidade.</p>
+            </div>
+            <div class="step-badge">SUA MENSALIDADE = R$0</div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h3>Cada cliente além dos 2 primeiros</h3>
+              <p>Você recebe 30% da mensalidade de cada cliente extra — R$120 por cliente por mês, todo mês, enquanto ele ficar ativo.</p>
+            </div>
+            <div class="step-badge">+R$120 / CLIENTE</div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h3>Sem limite de ganho</h3>
+              <p>Quanto mais você indica, mais você ganha. Você vira um parceiro de distribuição remunerado.</p>
+            </div>
+            <div class="step-badge">SEM TETO</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 04 — ROI ══════════════════ -->
+<section class="secao">
+  <div class="wrap">
+    <div class="secao-num">04</div>
+    <span class="secao-label verde">Retorno do Investimento</span>
+    <h2 class="secao-titulo">QUANTO TEMPO PARA RECUPERAR?</h2>
+    <p class="roi-intro">O investimento inicial é de R$7.897. A tabela abaixo mostra em quantos meses você recupera esse valor dependendo de quantos clientes você trouxer para o sistema.</p>
+    <div class="table-scroll">
+      <table class="roi-table">
+        <thead>
+          <tr>
+            <th>Clientes Indicados</th>
+            <th>Sua mensalidade</th>
+            <th>Comissão / mês</th>
+            <th>Benefício total / mês</th>
+            <th>Recupera em</th>
+            <th>Ganho no 1º ano</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0 clientes</td>
+            <td class="laranja">R$400 (paga)</td>
+            <td>R$0</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>2 clientes</td>
+            <td class="verde">R$0 (isento)</td>
+            <td>R$0</td>
+            <td class="amarelo">R$400 / mês</td>
+            <td>~20 meses</td>
+            <td>R$4.800</td>
+          </tr>
+          <tr>
+            <td>5 clientes</td>
+            <td class="verde">R$0 (isento)</td>
+            <td>3 × R$120 = R$360</td>
+            <td class="amarelo">R$760 / mês</td>
+            <td>~11 meses</td>
+            <td>R$9.120</td>
+          </tr>
+          <tr class="destaque">
+            <td><strong>10 clientes</strong></td>
+            <td class="verde">R$0 (isento)</td>
+            <td>8 × R$120 = R$960</td>
+            <td class="verde">R$1.360 / mês</td>
+            <td class="verde"><strong>~6 meses</strong></td>
+            <td class="verde"><strong>R$16.320</strong></td>
+          </tr>
+          <tr>
+            <td>15 clientes</td>
+            <td class="verde">R$0 (isento)</td>
+            <td>13 × R$120 = R$1.560</td>
+            <td class="verde">R$1.960 / mês</td>
+            <td>~4 meses</td>
+            <td>R$23.520</td>
+          </tr>
+          <tr>
+            <td>20 clientes</td>
+            <td class="verde">R$0 (isento)</td>
+            <td>18 × R$120 = R$2.160</td>
+            <td class="verde">R$2.560 / mês</td>
+            <td>~3 meses</td>
+            <td>R$30.720</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="roi-cards">
+      <div class="roi-card">
+        <div class="num">6</div>
+        <div class="label">Meses para retorno</div>
+        <div class="desc">Com 10 clientes indicados, você recupera o investimento em 6 meses e fica no lucro.</div>
+      </div>
+      <div class="roi-card top">
+        <div class="num">R$16k</div>
+        <div class="label">Retorno no 1º ano</div>
+        <div class="desc">Com 10 clientes, você gera R$16.320 no primeiro ano, mais que o dobro do investido.</div>
+      </div>
+      <div class="roi-card">
+        <div class="num">R$0</div>
+        <div class="label">Custo mensal</div>
+        <div class="desc">Com apenas 2 indicações você já elimina o custo mensal do sistema para sempre.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 05 — MERCADO ══════════════════ -->
+<section class="secao">
+  <div class="wrap">
+    <div class="secao-num">05</div>
+    <span class="secao-label verde">Pesquisa de Mercado</span>
+    <h2 class="secao-titulo">O TAMANHO DA OPORTUNIDADE</h2>
+    <div class="mercado-stats">
+      <div class="mercado-stat">
+        <div class="num">980<small>mil</small></div>
+        <div class="label">CACs registrados no Brasil</div>
+        <div class="sub">Dados de julho de 2025. Crescimento de 967% em 8 anos. Mercado em expansão acelerada.</div>
+      </div>
+      <div class="mercado-stat">
+        <div class="num">191<small>mil</small></div>
+        <div class="label">Armas de CACs no Rio Grande do Sul</div>
+        <div class="sub">RS é o 2º estado com mais registros do Brasil e líder nacional em armas de caçadores.</div>
+      </div>
+      <div class="mercado-stat">
+        <div class="num">~5<small>mil</small></div>
+        <div class="label">Despachantes e lojas no Brasil</div>
+        <div class="sub">Estimativa conservadora de operações que prestam serviço de despachante bélico no território nacional.</div>
+      </div>
+    </div>
+    <div class="oportunidade-box">
+      <div class="big-num">1%</div>
+      <div class="texto">
+        <h3>1% do mercado já transforma o negócio</h3>
+        <p>1% dos despachantes e lojas bélicas no Brasil representam aproximadamente <strong>50 clientes</strong> pagando R$400/mês, uma receita de <strong>R$20.000/mês recorrente</strong>. Para a Ellite, trazer 10 desses 50 clientes gera <strong>R$1.360/mês em benefício direto</strong>. Não é necessário dominar o mercado. É necessário ser relevante para um nicho que cresce e que ainda não tem um sistema feito sob medida.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+// ─── SLIDER PROBLEMA ───
+const sliders = {
+  p: { track: 'pTrack', dots: 'pDots', bar: 'pBar', counter: 'pCurrent', total: 4, cur: 0, timer: null, dur: 4000 }
+};
+
+function slRender(id) {
+  const s = sliders[id];
+  const track = document.getElementById(s.track);
+  const dots  = document.getElementById(s.dots);
+  const bar   = document.getElementById(s.bar);
+  const ctr   = document.getElementById(s.counter);
+
+  track.style.transform = `translateX(-${s.cur * 100}%)`;
+  if (ctr) ctr.textContent = String(s.cur + 1).padStart(2, '0');
+  dots.querySelectorAll('.sl-dot').forEach((d, i) => d.classList.toggle('active', i === s.cur));
+
+  // Reset progress bar animation
+  bar.style.transition = 'none';
+  bar.style.width = '0%';
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      bar.style.transition = `width ${s.dur}ms linear`;
+      bar.style.width = '100%';
+    });
+  });
+}
+
+function slGo(id, index) {
+  const s = sliders[id];
+  s.cur = index;
+  slRender(id);
+  slRestart(id);
+}
+
+function slMove(id, dir) {
+  const s = sliders[id];
+  s.cur = (s.cur + dir + s.total) % s.total;
+  slRender(id);
+  slRestart(id);
+}
+
+function slStart(id) {
+  const s = sliders[id];
+  s.timer = setInterval(() => {
+    s.cur = (s.cur + 1) % s.total;
+    slRender(id);
+  }, s.dur);
+}
+
+function slRestart(id) {
+  const s = sliders[id];
+  clearInterval(s.timer);
+  slStart(id);
+}
+
+// ─── MÓDULOS ───
+let modCur = 0;
+let modTimer = null;
+
+function selMod(index) {
+  const panels = document.querySelectorAll('.modpanel');
+  const tabs   = document.querySelectorAll('.modtab');
+
+  panels[modCur].classList.remove('active');
+  tabs[modCur].classList.remove('active');
+
+  modCur = index;
+
+  panels[modCur].classList.add('active');
+  tabs[modCur].classList.add('active');
+
+  clearInterval(modTimer);
+  modTimer = setInterval(() => {
+    selMod((modCur + 1) % 4);
+  }, 4500);
+}
+
+// ─── DOCS CHIPS INTERSECTION ───
+function initDocsAnimation() {
+  const wrap = document.getElementById('docsChips');
+  if (!wrap) return;
+  const chips = wrap.querySelectorAll('.doc-chip');
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        chips.forEach((chip, i) => {
+          setTimeout(() => chip.classList.add('visible'), i * 80);
+        });
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.2 });
+
+  obs.observe(wrap);
+}
+
+// ─── INIT ───
+document.addEventListener('DOMContentLoaded', () => {
+  slRender('p');
+  slStart('p');
+
+  modTimer = setInterval(() => {
+    selMod((modCur + 1) % 4);
+  }, 4500);
+
+  initDocsAnimation();
+});
+</script>
+</body>
+</html>
